@@ -114,17 +114,17 @@ public class Library implements Serializable{
     public static void main(String args[]){
         Library library = new Library();
         for(int i=0; i<args.length-3; i+=4){
-            if(Objects.equals(args[i], "a")){
+            if(Objects.equals(args[i], "1")){
                 Book book = new Book(args[i+1], args[i+2], args[i+3]);
                 library.addBook(book);
                 System.out.println("Book added to the system");
             }
-            else if(Objects.equals(args[i], "b")){
+            else if(Objects.equals(args[i], "2")){
                 Reader reader = new Reader(args[i+1], args[i+2], args[i+3]);
                 library.addReader(reader);
                 System.out.println("Reader added to the system");
             }
-            else if(Objects.equals(args[i], "c")){
+            else if(Objects.equals(args[i], "3")){
                 Reader reader = library.searchForReader(args[i+1]);
                 if(reader==null){
                     System.out.println("There is no such a person in the system");
@@ -147,7 +147,7 @@ public class Library implements Serializable{
                     System.out.println("Book cannot be rented: reader has a book not returned on time");
                 }
             }
-            else if(Objects.equals(args[i], "d")){
+            else if(Objects.equals(args[i], "4")){
                 Reader reader = library.searchForReader(args[i+1]);
                 if(reader==null){
                     System.out.println("There is no such a person in the system");
