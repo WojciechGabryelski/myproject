@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>200</x>
+      <y>30</y>
+      <w>310</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>mypackage::Library
+--
+-books: ArrayList&lt;Book&gt;
+-readers: ArrayList&lt;Reader&gt;
+--
++addBook(Book book): void
++addReader(Reader reader): void
++searchForBook(String title, String author): Book
++searchForReader(String pesel): Reader
++rentBook(Reader reader, Book book): boolean
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>240</y>
+      <w>310</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>mypackage::Reader
+--
+-pesel: String
+-firsName: String
+-lastName: String
+-rentedBooks: ArrayList&lt;Book&gt;
+--
++addBook(Book book): void
++canRent(): boolean
++searchForBook(String title, String author): Book
++returnBook(Book book): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>260</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>mypackage::Book
+--
+-title: String
+-author: String
+-category: String
+-status: boolean
+-rentalDate: LocalDateTime
+--
++changeStatus(): void
++calcFee(): double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>190</y>
+      <w>170</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>150.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>190</y>
+      <w>110</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+&lt; has</panel_attributes>
+    <additional_attributes>10.0;140.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>340</y>
+      <w>270</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=0..1
+&lt; rents</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;30.0</additional_attributes>
+  </element>
+</diagram>
